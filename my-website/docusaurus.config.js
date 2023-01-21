@@ -11,11 +11,11 @@ const katex = require('rehype-katex');
 const config = {
   title: 'AI Wiki',
   tagline: 'Artificial Intelligence Wiki',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://www.artificial.wiki',
   baseUrl: '/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -87,28 +87,32 @@ const config = {
           },
         ],
       },
+      algolia: {
+        // The application ID provided by Algolia
+        appId: 'YOUR_APP_ID',
+  
+        // Public API key: it is safe to commit it
+        apiKey: 'YOUR_SEARCH_API_KEY',
+  
+        indexName: 'YOUR_INDEX_NAME',
+  
+        // Optional: see doc section below
+        contextualSearch: true,
+  
+        // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+        externalUrlRegex: 'external\\.com|domain\\.com',
+  
+        // Optional: Algolia search parameters
+        searchParameters: {},
+  
+        // Optional: path for search page that enabled by default (`false` to disable it)
+        searchPagePath: 'search',
+  
+        //... other Algolia params
+      },
+      
       footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-            ],
-          },
-        ],
+        style: 'dark', 
         copyright: `Copyright © ${new Date().getFullYear()} Dennis Shushack. Built with Docusaurus.`,
       },
       prism: {
@@ -116,6 +120,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+   
 };
 
 
